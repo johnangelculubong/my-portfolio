@@ -1,0 +1,444 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}
+:root{
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+html{
+    font-size: 60%;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8rem 12% 4.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4.5rem;
+    font-weight: 500;
+    transition: .3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+section{
+    min-height: 100vh;
+    
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span{
+    color: var(--main-color);
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+/* FIXED selector to match the HTML */
+.home-image img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.home-image img:hover{
+    box-shadow: 0 0 25px var(--main-color), 
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+.social-icons a:hover{
+    color: var(--text-color);
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.btn-group a:nth-of-type(2){
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 50px transparent;
+}
+.btn-group a:nth-of-type(2):hover{
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span {
+    position: relative; /* Reference point for absolute positioning */
+    display: inline-block; /* Ensure block-level animation */
+}
+
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width:  calc(100% + 8px);
+    height: 100%;
+    border: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Frontend Designer";
+    }
+    21%,
+    40%{
+        content: "Web Designer";
+    }
+    41%,
+    60%{
+        content: "UI/UX Designer";
+    }
+    61%, 80%{
+        content: "Web Developer";
+    }
+    81%, 100%{
+        content: "Backend Developer";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+
+}
+
+.about-section {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .about-section {
+    position: relative;
+}
+
+.about-content a.btn {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+
+.project-section {
+    position: relative;
+}
+
+.project-section > div {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+
+  .about-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 96px; 
+    color: var(--text-color); 
+}
+  .about-section p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+  }
+  .project-title {
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 75px; 
+    color: var(--text-color); 
+}
+
+.tech-title{
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 50px; 
+    color: var(--text-color);
+}
+.technologies-list{
+    text-align: center;
+    font-size: 40px;
+}
+
+.footer {
+    background: #c4c4c4; 
+    color: black;
+    
+    text-align: left;
+  }
+  
+  
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+  }
+  
+  .marquee-content {
+    display: inline-block;
+    font-size: 200px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: marquee 50s linear infinite;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5rem 12%;
+    margin-top: 4rem; 
+  }
+  
+  
+  .footer-left h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-footer {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 2px solid white;
+    color: black;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-footer:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  .footer-center h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-center a {
+    display: block;
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+  }
+  
+  .footer-center a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .footer-right h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-right p {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icons-footer a {  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid white;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: black;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .social-icons-footer a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 3rem;
+    }
+  
+    .marquee-content {
+      font-size: 100px; 
+    }
+  }
+  
