@@ -303,10 +303,22 @@ span{
     font-family: "Montserrat", sans-serif;
   }
   .project-title {
+    margin-top: 100px;
     margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif; 
     font-size: 75px; 
     color: var(--text-color); 
+    margin-left: 65px;
+    font-weight: normal;
+}
+.project-description {
+  margin-bottom: 50px;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 24px; 
+  font-weight: lighter;
+  color: var(--text-color); 
+  max-width: 500px;
+  margin-left: 65px;
 }
 
 .tech-title{
@@ -450,4 +462,19 @@ span{
       font-size: 100px; 
     }
   }
-  
+  .project-image {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+  .project-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+    width: 1200px;
+    height: 600px;
+    margin-bottom: 100px;
+  }
